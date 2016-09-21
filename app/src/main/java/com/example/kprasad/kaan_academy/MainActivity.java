@@ -11,6 +11,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String LOG_TAG_MAINACTIVITY = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,16 +21,19 @@ public class MainActivity extends AppCompatActivity {
         //how to handle the button based on id - and listen for events
         Button b = (Button) findViewById(R.id.radioButton);
 
+        Log.d(LOG_TAG_MAINACTIVITY, "onCreate");
+
         //You create an event listener object and define a function inside it
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("MainActivity", "Onclick through findViewByID");
             }
-
-
-
         });
+
+        //Activity life cycle demo
+
+
         /*
         //2. Now create a reference to the layout
         // type cast to linear layout,
@@ -59,6 +64,34 @@ public class MainActivity extends AppCompatActivity {
         }*/
 
     }
+
+    //ALC - pause
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(LOG_TAG_MAINACTIVITY, "onPause");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(LOG_TAG_MAINACTIVITY, "onResume");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(LOG_TAG_MAINACTIVITY, "onStop");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(LOG_TAG_MAINACTIVITY, "onStart");
+    }
+
 
     public void submitButtonHandler(View view) {
 
