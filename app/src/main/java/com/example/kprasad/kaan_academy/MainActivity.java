@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitButtonHandler(View view) {
 
-        Log.d("MainActivity", "Handling submit request");
+        Button b = (Button) view;
+        Log.d("MainActivity", "Handling submit request" + b.getText());
     }
 }//End of class
