@@ -1,12 +1,10 @@
 package com.example.kprasad.kaan_academy;
 
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,8 +14,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.event_handling_layout);
+        setContentView(R.layout.picture_layout);
 
+        Button btnSwap = (Button) findViewById(R.id.button3);
+        btnSwap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String image_name = "kk2";
+                int res = getResources().getIdentifier(image_name, "drawable", getPackageName());
+                ImageView iv = (ImageView) findViewById(R.id.imageHolder);
+                iv.setImageResource(res);
+            }
+        });
+
+        /*
         //how to handle the button based on id - and listen for events
         Button b = (Button) findViewById(R.id.radioButton);
 
@@ -30,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MainActivity", "Onclick through findViewByID");
             }
         });
+        */
 
         //Activity life cycle demo
 
@@ -66,8 +77,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //ALC - pause
-
-
     @Override
     protected void onPause() {
         super.onPause();
@@ -92,9 +101,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG_MAINACTIVITY, "onStart");
     }
 
-
     public void submitButtonHandler(View view) {
-
         Button b = (Button) view;
         Log.d("MainActivity", "Handling submit request" + b.getText());
     }
