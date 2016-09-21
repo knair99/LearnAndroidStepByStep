@@ -3,9 +3,11 @@ package com.example.kprasad.kaan_academy;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
                 iv.setImageResource(res);
             }
         });
+
+
+
 
         /*
         //how to handle the button based on id - and listen for events
@@ -74,6 +79,15 @@ public class MainActivity extends AppCompatActivity {
 
         }*/
 
+    }
+
+
+    //Adding a menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.settingsmenu, menu);
+        return true;
     }
 
     //ALC - pause
