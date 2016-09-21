@@ -3,6 +3,8 @@ package com.example.kprasad.kaan_academy;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Button;
@@ -12,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.prog_layout);
+        setContentView(R.layout.event_handling_layout);
 
+        /*
         //2. Now create a reference to the layout
         // type cast to linear layout,
         // since it's a super class view that's returned
@@ -40,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
             //4. Add it to layout
             layout.addView(button);
 
-        }
+        }*/
+
     }
-}
+
+    public void submitButtonHandler(View view) {
+
+        Log.d("MainActivity", "Handling submit request");
+    }
+}//End of class

@@ -2,4 +2,5 @@
     <string name="app_name">Hello World</string>
     <!-- 4. Add a string resource for kics, for the buttons-->
     <string name="click_me_text"> Click on me! </string>
+    <string name="submit_button_text">Submit</string>
 </resources>
