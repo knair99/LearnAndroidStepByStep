@@ -16,6 +16,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_handling_layout);
 
+        //how to handle the button based on id - and listen for events
+        Button b = (Button) findViewById(R.id.radioButton);
+
+        //You create an event listener object and define a function inside it
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("MainActivity", "Onclick through findViewByID");
+            }
+
+
+
+        });
         /*
         //2. Now create a reference to the layout
         // type cast to linear layout,
