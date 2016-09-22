@@ -4,5 +4,5 @@
     <item android:id="@+id/new_game"
         android:icon="@drawable/kk"
         android:title="KK Options"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 </menu>

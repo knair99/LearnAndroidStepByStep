@@ -1,5 +1,6 @@
 package com.example.kprasad.kaan_academy;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     //Adding a menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        Log.d("MainActivity", "rendering the menu");
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.settingsmenu, menu);
         return true;
@@ -118,5 +120,9 @@ public class MainActivity extends AppCompatActivity {
     public void submitButtonHandler(View view) {
         Button b = (Button) view;
         Log.d("MainActivity", "Handling submit request" + b.getText());
+    }
+
+    public void bioButtonHandler(View view) {
+        Intent bioIntent;
     }
 }//End of class
