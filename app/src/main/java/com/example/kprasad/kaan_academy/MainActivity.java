@@ -12,6 +12,7 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
+    static int count = 0;
     public static final String LOG_TAG_MAINACTIVITY = "MainActivity";
 
     @Override
@@ -21,9 +22,17 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnSwap = (Button) findViewById(R.id.button3);
         btnSwap.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
-                String image_name = "kk2";
+                count++;
+                String image_name;
+                if (count % 2 == 0)
+                    image_name = "kk2";
+                else
+                    image_name = "kk";
+
                 int res = getResources().getIdentifier(image_name, "drawable", getPackageName());
                 ImageView iv = (ImageView) findViewById(R.id.imageHolder);
                 iv.setImageResource(res);
@@ -123,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void bioButtonHandler(View view) {
-        Intent bioIntent;
+        Intent bioIntent = new Intent(this, BioDataActivity.class);
+        startActivity(bioIntent);
     }
 }//End of class
