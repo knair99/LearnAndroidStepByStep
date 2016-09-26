@@ -2,9 +2,12 @@ package com.example.kprasad.kaan_academy;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class BioDataActivity extends AppCompatActivity {
+
+    protected String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,9 +15,18 @@ public class BioDataActivity extends AppCompatActivity {
         setContentView(R.layout.biodata_layout);
 
         //Now receive data from MainActivity
-        String title = getIntent().getStringExtra(MainActivity.KK_TITLE_DATA);
+        title = getIntent().getStringExtra(MainActivity.KK_TITLE_DATA);
         TextView tv = (TextView) findViewById(R.id.biodata_title);
         tv.setText(title);
+
+    }
+
+    public void bioDoneBtnHandler(View view) {
+
+        //How to return data back from activity
+        getIntent().putExtra("resultBioActivity", "Looking for another " + title + "? Good luck!" );
+        setResult(RESULT_OK, getIntent());
+        finish(); //Finish resturns to the calling activity
 
     }
 }

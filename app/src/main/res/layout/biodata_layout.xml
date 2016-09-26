@@ -10,12 +10,13 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-    </LinearLayout>
+        </LinearLayout>
 
     </ScrollView>
 
@@ -23,19 +24,29 @@
         android:id="@+id/biodata_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="Bio Data"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp" />
+        android:layout_marginTop="19dp"
+        android:text="Bio Data"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/bio_done_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/scrollView1"
+        android:layout_centerHorizontal="true"
+        android:onClick="bioDoneBtnHandler"
+        android:text="Done" />
 
     <TextView
+        android:id="@+id/editText2"
         android:layout_width="291dp"
         android:layout_height="396dp"
-        android:text="@string/biodata_text"
-        android:ems="10"
-        android:id="@+id/editText2"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:ems="10"
+        android:text="@string/biodata_text"
+        android:scrollbars="vertical"/>
 
 </RelativeLayout>

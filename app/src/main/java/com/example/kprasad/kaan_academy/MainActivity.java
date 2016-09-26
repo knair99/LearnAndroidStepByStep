@@ -9,10 +9,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Button;
 import android.view.Menu;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String KK_TITLE_DATA = "KKTitleData";
+    public static final int BIO_DONE_REQUEST_CODE = 10001;
     static int count = 0;
     public static final String LOG_TAG_MAINACTIVITY = "MainActivity";
 
@@ -141,6 +143,23 @@ public class MainActivity extends AppCompatActivity {
         bioIntent.putExtra(KK_TITLE_DATA, kkd.getTitle()); //Declared a constant named AGE up top
 
 
-        startActivity(bioIntent);
+        startActivityForResult(bioIntent, BIO_DONE_REQUEST_CODE); //this method (as opposed to startActivity can handle results back from new activity
+        //The second param is a result code, for us to asynchronously handle results back later using the code
+
+    }
+
+    //Now handle the result asynchronously
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if(requestCode == BIO_DONE_REQUEST_CODE){
+
+            if (resultCode == RESULT_OK){
+
+                String mesg = data.getStringExtra("resultBioActivity");
+                Toast.makeText(this, mesg, Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }//End of class
