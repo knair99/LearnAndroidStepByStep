@@ -8,27 +8,27 @@
         android:id="@+id/imageHolder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/kk"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        app:srcCompat="@drawable/kk" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Swap!"
-        android:layout_below="@+id/imageHolder"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp" />
+        android:layout_marginTop="46dp" />
 
     <Button
         android:text="Bio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_alignStart="@+id/button3"
         android:id="@+id/button4"
         android:onClick="bioButtonHandler"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next pic>"
+        android:layout_marginTop="55dp"
+        android:layout_below="@+id/imageHolder"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4" />
 </RelativeLayout>
