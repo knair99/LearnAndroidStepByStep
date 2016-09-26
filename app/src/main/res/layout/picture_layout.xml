@@ -11,7 +11,17 @@
         app:srcCompat="@drawable/kk"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp" />
+        android:layout_marginTop="97dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Swap"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignLeft="@+id/imageHolder"
+        android:layout_alignStart="@+id/imageHolder" />
 
     <Button
         android:text="Bio"
@@ -19,16 +29,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/button4"
         android:onClick="bioButtonHandler"
+        android:layout_marginBottom="49dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next pic>"
-        android:layout_marginTop="55dp"
-        android:layout_below="@+id/imageHolder"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_alignStart="@+id/button4" />
+        android:layout_alignRight="@+id/imageHolder"
+        android:layout_alignEnd="@+id/imageHolder" />
 </RelativeLayout>

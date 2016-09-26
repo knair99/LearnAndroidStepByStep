@@ -12,6 +12,7 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String KK_TITLE_DATA = "KKTitleData";
     static int count = 0;
     public static final String LOG_TAG_MAINACTIVITY = "MainActivity";
 
@@ -133,6 +134,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void bioButtonHandler(View view) {
         Intent bioIntent = new Intent(this, BioDataActivity.class);
+
+        //How to handle data
+        //First send the data through putExtra
+        KKData kkd = new KKData();
+        bioIntent.putExtra(KK_TITLE_DATA, kkd.getTitle()); //Declared a constant named AGE up top
+
+
         startActivity(bioIntent);
     }
 }//End of class
