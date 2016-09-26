@@ -1,5 +1,7 @@
 package com.example.kprasad.kaan_academy;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,5 +30,11 @@ public class BioDataActivity extends AppCompatActivity {
         setResult(RESULT_OK, getIntent());
         finish(); //Finish resturns to the calling activity
 
+    }
+
+    public void showGitHubOnClick(View view) {
+        Uri github = Uri.parse("https://github.com/knair99?tab=repositories");
+        Intent webIntent = new Intent(Intent.ACTION_VIEW, github);
+        startActivity(webIntent);
     }
 }
